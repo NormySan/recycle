@@ -35,7 +35,7 @@ angular.module('recycleApp')
 		all: function() {
 			return $http.jsonp(apiUrl + '/79d60aee-718e-48ea-bdfa-cca9239ec3bf/DetailedServiceUnits/json', { params: { apikey: apiKey } });
 		}
-	}
+	} 
 }])
 
 /**

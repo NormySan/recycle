@@ -2,7 +2,7 @@
 
 angular.module('recycleApp', ['ui.router'])
 
-.config(['$stateProvider', '$urlRouteProvider', function($stateProvider, $urlRouteProvider) {
+.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
 	$stateProvider
 
@@ -45,5 +45,8 @@ angular.module('recycleApp', ['ui.router'])
 			url: '/tips-tricks',
 			templateUrl: 'partials/tips-tricks.html',
 			controller: 'TipsTricksController'
-		})
+		});
+
+		// Go to this route when nothing else is defined.
+		$urlRouterProvider.otherwise('/');
 }]);
