@@ -6,14 +6,11 @@ angular.module('recycleApp')
  * Get recycle location data.
  */
 .factory('LocationService', ['EnvironmentalStationService', 'RecycleStationService', function(EnvironmentalStationService, RecycleStationService) {
+	var locations = [];
 
 	return {
 		all: function() {
-			var locations = [];
-
-			EnvironmentalStationService.then(function(response) {
-				console.log(response);
-			});
+			return EnvironmentalStationService.all();
 		}
 	}
 
@@ -21,7 +18,7 @@ angular.module('recycleApp')
 
 /**
  * Get locations for environmental stations (Miljöstationer).
- * 
+ *
  * API ID: 79d60aee-718e-48ea-bdfa-cca9239ec3bf
  *
  * @param  {object} $http
@@ -35,14 +32,14 @@ angular.module('recycleApp')
 		all: function() {
 			return $http.jsonp(apiUrl + '/79d60aee-718e-48ea-bdfa-cca9239ec3bf/DetailedServiceUnits/json', { params: { apikey: apiKey } });
 		}
-	} 
+	}
 }])
 
 /**
  * Get locations for recycle stations.
  *
  * API ID: ac4854fb-fba3-4d01-83ce-ff7992310846
- * 
+ *
  * @param  {object} $http
  * @return {object}
  */

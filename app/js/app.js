@@ -2,17 +2,11 @@
 
 angular.module('recycleApp', ['ui.router'])
 
-.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
 	$stateProvider
-
 		.state('start', {
 			url: '/',
-			resolve: {
-				places: ['LocationService', function(LocationService) {
-					return LocationService.all();
-				}]
-			},
 			templateUrl: 'partials/start.html',
 			controller: 'StartController'
 		})
@@ -47,6 +41,9 @@ angular.module('recycleApp', ['ui.router'])
 			controller: 'TipsTricksController'
 		});
 
-		// Go to this route when nothing else is defined.
-		$urlRouterProvider.otherwise('/');
+	// Go to this route when nothing else is defined.
+	$urlRouterProvider.otherwise('/');
+
+		// Set HTML5 routing to true, this will remove the hashbang # from the url.
+  	$locationProvider.html5Mode(true);
 }]);
