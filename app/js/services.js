@@ -1,7 +1,6 @@
 'use strict';
 
-<<<<<<< HEAD
-angular.module('recyleApp')
+angular.module('recycleApp')
 
 /**
  * Get recycle location data.
@@ -57,6 +56,3 @@ angular.module('recyleApp')
 		}
 	}
 }]);
-=======
-angular.module('recycleApp');
->>>>>>> 77162546c341ad7ea915c5ee1de91ae36d293b90

@@ -2,12 +2,17 @@
 
 angular.module('recycleApp', ['ui.router'])
 
-.config(['$stateProvider', '$urlRouteProvider', 
-function($stateProvider, $urlRouteProvider) {
+.config(['$stateProvider', '$urlRouteProvider', function($stateProvider, $urlRouteProvider) {
+
 	$stateProvider
 
 		.state('start', {
 			url: '/',
+			resolve: {
+				places: ['LocationService', function(LocationService) {
+					return LocationService.all();
+				}]
+			},
 			templateUrl: 'partials/start.html',
 			controller: 'StartController'
 		})
