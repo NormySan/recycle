@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('recyleApp')
+angular.module('recycleApp')
 
 .controller('StartController', [function() {
 

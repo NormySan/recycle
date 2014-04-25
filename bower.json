@@ -24,6 +24,7 @@
     "angular-ui-router": "0.2.7",
     "entypo": "*",
     "fontawesome": "4.0.3",
-    "normalize.css": "3.0.1"
+    "normalize.css": "3.0.1",
+    "underscore": "1.6.0"
   }
 }
